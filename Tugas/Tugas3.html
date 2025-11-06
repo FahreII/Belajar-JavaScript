@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tugas</title>
+</head>
+<body>
+    <h2>Tugas</h2>
+    <script>
+        let nilai = prompt("Masukan nilai : ")
+        nilai = parseInt(nilai)
+
+        if (nilai >= 85 && nilai <= 100){
+            document.write("<p> Rentang nilai " + nilai  +  " Nilai Huruf A</p")
+        } else if (nilai >= 70 && nilai <= 84) {
+            document.write("<p> Rentang nilai " + nilai  +  " Nilai huruf B </p>")
+        } else if (nilai >= 55 && nilai <= 69) {
+            document.write("<p> Rentang nilai " + nilai  +  " Nilai huruf C </p>")
+        } else if (nilai >= 40 && nilai <= 54) {
+            document.write("<p> Rentang nilai " + nilai  +  " Nilai huruf D </p>")
+        } else if (nilai > 100) {
+            document.write("<p> Rentang nilai " + nilai  +  " Nilai huruf SSR </p>")
+        } else {
+            document.write("<p> Rentang nilai " + nilai  +  " Nilai huruf E </p>")
+        }
+    </script>
+</body>
+</html>

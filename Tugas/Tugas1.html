@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coba</title>
+</head>
+<body>
+    <h2>Tugas 1</h2>
+    <script>
+        let tb = prompt("Masukan tinggi badan : ")
+        tb = parseInt(tb) / 100;
+        let bb = prompt("Masukan berat badan : ")
+        bb = parseInt(bb)
+
+        BMI = bb/(tb**2)
+        if (BMI <= 18.5){
+            document.write("<p>Berat badan anda " + bb + " anda kurus kering")
+        } else if (BMI >= 18.5 && BMI <= 24.9) {
+            document.write("<p>Berat badan anda " + bb + " anda memiliki berat badan yang normal")
+        } else if (BMI >= 25 && BMI <= 24.9) {
+            document.write("<p>Berat badan anda " + bb + " anda gemuk")
+        } else {
+        document.write("<p>Berat badan anda " + bb + " anda obesitas,SEGERA DIET!!!!")
+        }
+    </script>
+</body>
+</html>
