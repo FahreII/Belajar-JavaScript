@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>While</title>
+</head>
+<body>
+    <h2>While</h2>
+    <button onclick="ulang()">Jalankan</button>
+    <pre id ="output"></pre>
+
+<script>
+    function ulang(){
+        let i = 1;
+        let hasil = " ";
+        while (i <= 5) {
+            hasil += "Angka ke-" + i + "\n";
+            i++;
+        }
+        document.getElementById("output").textContent = hasil;
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Do...While Loop - JavaScript</title>
+</head>
+
+<body>
+    <h2>Do...While Loop</h2>
+    <button onclick="loopDoWhile()">Jalankan</button>
+    <pre id="output"></pre>
+
+    <script>
+        function loopDoWhile() {
+            let i = 6;
+            let hasil = "";
+            do {
+                hasil += "Nilai i: " + i + "\n";
+                i++;
+            } while (i <= 5);
+            document.getElementById("output").textContent = hasil;
+        }
+    </script>
+</body>
+
+</html>
