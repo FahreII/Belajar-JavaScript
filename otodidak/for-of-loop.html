@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>for-of-loop.html</title>
+</head>
+<body>
+    <h2>for-of-loop.html</h2>
+    <button onclick="jalankan()">jalankan</button>
+    <pre id="output"></pre>
+    <script>
+        function jalankan() {
+            const arr = ["apel","jeruk","melion"];
+            let hasil = "";
+            for (const buah of arr){
+                hasil += buah + "\n";
+            }
+            document.getElementById("output").textContent = hasil;
+        }
+    </script>
+</body>
+</html>

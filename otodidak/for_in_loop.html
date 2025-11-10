@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For In Loop</title>
+</head>
+
+<body>
+    <h2>For...In Loop</h2>
+    <button onclick="jalankan()">Jalankan</button>
+    <pre id="output"></pre>
+
+    <script>
+        function jalankan() {
+            const obj = { nama: "Siti", umur: 21 };
+            let hasil = "";
+            for (const key in obj) {
+                hasil += key + ": " + obj[key] + "\n";
+            }
+            document.getElementById("output").textContent = hasil;
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test</title>
+</head>
+<body>
+    <h2>Test</h2>
+    <button onclick="tampilkan()">Jalankan</button>
+    <pre id="output"></pre>
+
+    <script>
+        function tampilkan(){
+            const angka = parseInt(prompt("Masukkan angka: "));
+            let i = 1;
+            let hasil = "";
+            
+            while (i <= 10 ) {
+                hasil += angka + " x " + i + " = " + (angka * i) + "\n";
+                i++;
+            }
+        }
+    </script>
+</body>
+</html>
