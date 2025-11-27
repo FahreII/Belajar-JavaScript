@@ -7,6 +7,7 @@
     <title>Majelis 2.0</title>
     <style>
         body {
+            max-width: 100%;
             font-family: Arial, sans-serif;
             background-image: linear-gradient(to bottom, #D6EFD8, #80AF81, #508D4E, #1A5319);
             background-repeat: no-repeat;
@@ -19,9 +20,11 @@
         #LOGO {
             width: 30rem;
             height: auto;
-            margin-left: 521px;
+            display: block;
+            margin: 20px auto;
             transition: transform 0.4s, opacity 0.4s;
             cursor: pointer;
+            max-width: 90%;
         }
 
         #LOGO:hover {
@@ -40,7 +43,7 @@
             background: #D6EFD8;
             padding: 20px;
             max-width: 350px;
-            border: 1px solid #D6EFD8;   
+            border: 1px solid #D6EFD8;
             border-radius: 10px;
             width: 50%;
             margin: 0 auto;
@@ -53,6 +56,7 @@
         input {
             border: none;
             border-radius: 5px;
+            padding: 10px;
         }
 
         label {
@@ -75,7 +79,7 @@
         }
 
         .gender-btn {
-            padding: 15px 40px;
+            padding: 10px 25px;
             background: white;
             border-radius: 6px;
             cursor: pointer;
@@ -96,7 +100,7 @@
         .gender-btn:hover {
             transform: scale(1.03);
         }
-        
+
         #pesan {
             font-size: small;
             font-weight: bold;
@@ -105,8 +109,8 @@
 </head>
 
 <body>
-    <img src="MAJELIS.png" id="LOGO" alt="logo">
     <div class="container">
+        <img src="MAJELIS.png" id="LOGO" alt="logo">
         <div class="daftar">
             <label for="nama">Nama: </label><br />
             <input type="text" id="nama" placeholder="Nama lengkap" /><br />
@@ -130,60 +134,60 @@
     </div>
     <script>
         document.getElementById("kirim").addEventListener("click", function () {
-                let nama = document.getElementById("nama").value.trim();
-                let hp = document.getElementById("no hp").value.trim();
-                let tgl = document.getElementById("tanggal lahir").value;
-                let alasan = document.getElementById("alasan bergabung").value.trim();
-                let pesan = document.getElementById("pesan");
+            let nama = document.getElementById("nama").value.trim();
+            let hp = document.getElementById("no hp").value.trim();
+            let tgl = document.getElementById("tanggal lahir").value;
+            let alasan = document.getElementById("alasan bergabung").value.trim();
+            let pesan = document.getElementById("pesan");
 
-                let genderMale = document.getElementById("male").checked;
-                let genderFemale = document.getElementById("female").checked;
-                if (nama === "") {
-                    pesan.textContent = "Nama tidak boleh kosong!";
-                    pesan.style.color = "red";
-                    return;
-                }
-                if (hp === "" || isNaN(hp) || hp.length < 10) {
-                    pesan.textContent = "No HP harus angka dan minimal 10 digit!";
-                    pesan.style.color = "red";
-                    return;
-                }
-                if (tgl === "") {
-                    pesan.textContent = "Tanggal lahir belum diisi!";
-                    pesan.style.color = "red";
-                    return;
-                }
-                if (!genderMale && !genderFemale) {
-                    pesan.textContent = "Pilih jenis kelamin!";
-                    pesan.style.color = "red";
-                    return;
-                }
-                if (alasan.length < 5) {
-                    pesan.textContent = "Alasan terlalu pendek!";
-                    pesan.style.color = "red";
-                    return;
-                }
+            let genderMale = document.getElementById("male").checked;
+            let genderFemale = document.getElementById("female").checked;
+            if (nama === "") {
+                pesan.textContent = "Nama tidak boleh kosong!";
+                pesan.style.color = "red";
+                return;
+            }
+            if (hp === "" || isNaN(hp) || hp.length < 10) {
+                pesan.textContent = "No HP harus angka dan minimal 10 digit!";
+                pesan.style.color = "red";
+                return;
+            }
+            if (tgl === "") {
+                pesan.textContent = "Tanggal lahir belum diisi!";
+                pesan.style.color = "red";
+                return;
+            }
+            if (!genderMale && !genderFemale) {
+                pesan.textContent = "Pilih jenis kelamin!";
+                pesan.style.color = "red";
+                return;
+            }
+            if (alasan.length < 10) {
+                pesan.textContent = "Alasan terlalu pendek!";
+                pesan.style.color = "red";
+                return;
+            }
 
-                pesan.textContent = "Data valid! Terima kasih sudah mendaftar!";
-                pesan.style.color = "green";
-            });
+            pesan.textContent = "Data valid! Terima kasih sudah mendaftar!";
+            pesan.style.color = "green";
+        });
 
-                const gambar = document.getElementById("LOGO");
-                    gambar.addEventListener("click", function () {
-                        if (!gambar.classList.contains("hilang")) {
-                            gambar.classList.add("hilang");
-                        } else {
-                            gambar.classList.remove("hilang");
-                        }
-                });
+        const gambar = document.getElementById("LOGO");
+        gambar.addEventListener("click", function () {
+            if (!gambar.classList.contains("hilang")) {
+                gambar.classList.add("hilang");
+            } else {
+                gambar.classList.remove("hilang");
+            }
+        });
 
-                const box = document.getElementById("kirim");
-                    box.addEventListener("mouseover", function () {
-                        box.style.backgroundColor = " #1A5319";
-                    });
-                    box.addEventListener("mouseout", function () {
-                        box.style.backgroundColor = "#508D4E";
-            });
+        const box = document.getElementById("kirim");
+        box.addEventListener("mouseover", function () {
+            box.style.backgroundColor = " #1A5319";
+        });
+        box.addEventListener("mouseout", function () {
+            box.style.backgroundColor = "#508D4E";
+        });
     </script>
 </body>
 
