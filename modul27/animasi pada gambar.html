@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ANIMASI</title>
+    <style>
+        body {
+            font-family: arial, sans-serif;
+            padding: 20px;
+        }
+
+        h2 {
+            color: #2c3e50;
+        }
+
+        #foto {
+            width: 200px;
+            border-radius: 10px;
+            transition: transform 0.4s, opacity 0.4s;
+            cursor: pointer;
+        }
+
+        #foto:hover {
+            transform: scale(1.2) rotate(3deg);
+        }
+
+        .hilang {
+            opacity: 0.1;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>animasi pada gambar</h2>
+    <p>arahkan mouse ke gambar untuk zoom, klik gambar untuk efek fade</p>
+    <br />
+    <img src="https://tse3.mm.bing.net/th/id/OIP.yMX0VX-ndbKUCw1k4y_flAHaJO?pid=Api&P=0&h=180" id="foto" alt="gambar contoh" />
+    <script>
+        const gambar = document.getElementById("foto");
+        gambar.addEventListener("click", function () {
+            if (!gambar.classList.contains("hilang")) {
+                gambar.classList.add("hilang");
+            } else {
+                gambar.classList.remove("hilang");
+            }
+        });
+    </script>
+</body>
+
+</html>

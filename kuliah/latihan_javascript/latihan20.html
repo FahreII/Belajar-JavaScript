@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            padding: 20px;
+        }
+
+        #btnHover {
+            padding: 10px 20px;
+            background-color: #3498bd;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        #btnHover.hovered {
+            background-color: #2ecc71;
+        }
+
+        .error {
+            color: red;
+            font-size: 14px;
+        }
+
+        .success{
+            color: green;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h2>contoh event klik,hover serta validasi form</h2>
+    <br /><br />
+    <button id="btnClick">klik saya</button>
+    <p id="clickMessage"></p>
+    <br />
+    <hr />
+    <br />
+    <button id="btnHover">arahkan kursor ke saya</button>
+    <p id="hoverMessage"></p>
+    <br />
+    <hr />
+    <br />
+    <h3>formulir pendaftaran</h3>
+    <form id="myform">
+        <label>Nama:</label><br />
+        <input type="text" id="nama" /><br />
+        <span id="namaerror" class="error"></span>
+        <br /><br />
+        <label>email:</label><br />
+        <input type="text" id="email" /><br />
+        <span id="emailerror" class="error"></span>
+        <br /><br />
+        <button type="submit">submit</button>
+    </form>
+    <P id = "formSuccess" class="success"></P>
+        <script>
+            //============Event Klik ============
+            const btnClick = document.getElementById("btnClick");
+            const clickMessage = document.getElementById("clickMessage");
+
+            btnClick.addEventListener("click", function () {
+                clickMessage.textContent = "Tombol berhasil diklik!";
+            });
+
+            //===========Event Hover ===========
+            const btnHover = document.getElementById("btnHover");
+            const hoverMessage = document.getElementById("hoverMessage");
+
+            btnHover.addEventListener("mouseover", function () {
+                btnHover.classList.add("hovered");
+                hoverMessage.textContent = "Mouse sedang berada diatas tombol.";
+            });
+
+            btnHover.addEventListener("mouseout", function () {
+                btnHover.classList.remove("hovered");
+                hoverMessage.textContent = "Mouse keluar dari tombol.";
+            });
+
+            //=========== Validasi Form ========
+            const form = document.getElementById("myform");
+            const nama = document.getElementById("nama");
+            const email = document.getElementById("email");
+            const namaError = document.getElementById("namaerror");
+            const emailError = document.getElementById("emailerror");
+            const formError = document.getElementById("formerror");
+
+            form.addEventListener("submit", function (e) {
+                e.preventDefault();
+                let valid = true;
+
+                // Validasi Nama
+                if (nama.value.trim() === "") {
+                    namaError.textContent = "Nama wajib diisi!";
+                    valid = false;
+                } else {
+                    namaError.textContent = "";
+                }
+
+                // Validasi email sederhana
+                if (!email.value.includes("@")) {
+                    emailError.textContent = "Email tidak valid!";
+                    valid = false;
+                } else {
+                    emailError.textContent = "";
+                }
+
+                // Jika Valid
+                if (valid) {
+                    formSuccess.textContent = "Form berhasil dikirim!";
+                }
+            });
+        </script>
+    </form>
+</body>
+</html>

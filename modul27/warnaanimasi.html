@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ANIMASI</title>
+    <style>
+        body {
+            font-family: arial, sans-serif;
+            padding: 20px;
+        }
+
+        h2 {
+            color: #2c3e50;
+        }
+
+        .kotak {
+            width: 150px;
+            height: 150px;
+            background-color: #f10707;
+            transition: background-color 0.5s;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>animasi transisi warna</h2>
+    <p>arahkan mouse ke kotak untuk melihat perubahan warna.</p>
+    <div class="kotak" id="box"></div>
+    <script>
+        const box = document.getElementById("box");
+        box.addEventListener("mouseover", function () {
+            box.style.backgroundColor = "#e67e22";
+        });
+        box.addEventListener("mouseover", function () {
+            box.style.backgroundColor = "#3498db";
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ANIMASI</title>
+    <style>
+        body {
+            font-family: arial, sans-serif;
+            padding: 20px;
+        }
+
+        h2 {
+            color: #2c3e50;
+        }
+
+        #teks {
+            opacity: 0;
+            transition: opacity 1.2s;
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>animasi fade in</h2>
+    <p>klik tombol untuk menampilkan teks secara perlahan</p>
+    <button id="tampil">tampilkan teks</button>
+    <p id="teks">selamat datang di kuliah pengantar web!</p>
+    <script>
+        document.getElementById("tampil").addEventListener("click", function () {
+            document.getElementById("teks").style.opacity = 1;
+        });
+    </script>
+
+</body>
+
+</html>
