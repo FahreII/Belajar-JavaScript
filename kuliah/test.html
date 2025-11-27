@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="registerForm">
+    
+        <div class="gender-wrapper">
+    
+            <input type="radio" name="gender" id="male" value="male" hidden>
+            <label for="male" class="gender-btn">Laki laki</label>
+    
+            <input type="radio" name="gender" id="female" value="female" hidden>
+            <label for="female" class="gender-btn">Perempuan</label>
+    
+        </div>
+    
+        <button type="submit" class="submit-btn">Submit</button>
+    
+    </form>
+    
+    <style>
+        body {
+            background: #d1d1d1;
+            font-family: sans-serif;
+        }
+    
+        .gender-wrapper {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 150px;
+        }
+    
+        /* Default button style */
+        .gender-btn {
+            padding: 15px 40px;
+            background: white;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 18px;
+            transition: 0.3s;
+            user-select: none;
+            border: none;
+            box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+        }
+    
+        /* Saat radio terpilih → label berubah */
+        input:checked+.gender-btn {
+            background: #2196f3;
+            color: white;
+            transform: scale(1.05);
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+        }
+    
+        /* Hover */
+        .gender-btn:hover {
+            transform: scale(1.03);
+        }
+    
+        .submit-btn {
+            margin-top: 40px;
+            display: block;
+            padding: 12px 30px;
+            font-size: 18px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background: black;
+            color: white;
+        }
+    </style>
+    
+    <script>
+        const form = document.getElementById("registerForm");
+
+        form.addEventListener("submit", (e) => {
+            const selected = document.querySelector("input[name='gender']:checked");
+
+            if (!selected) {
+                alert("Silakan pilih gender dulu!");
+                e.preventDefault();
+            } else {
+                alert("Gender dipilih: " + selected.value);
+            }
+        });
+    </script>
+</body>
+</html>

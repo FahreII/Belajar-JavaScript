@@ -67,7 +67,7 @@
     <button id="cek">cek validasi</button>
     <script>
         document.getElementById("cek").addEventListener("click", function () {
-            let nama = document.getAnimations("nama").value;
+            let nama = document.getElementById("nama").value;
             let pesan = document.getElementById("pesan");
             if (nama === "") {
                 pesan.textContent = "nama tidak boleh kosong!";
