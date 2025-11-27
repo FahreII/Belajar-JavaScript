@@ -19,7 +19,17 @@
         #LOGO {
             width: 30rem;
             height: auto;
-            margin-left: 525px;
+            margin-left: 521px;
+            transition: transform 0.4s, opacity 0.4s;
+            cursor: pointer;
+        }
+
+        #LOGO:hover {
+            transform: scale(1.2) rotate(3deg);
+        }
+
+        .hilang {
+            opacity: 0.1;
         }
 
         .container {
@@ -158,6 +168,14 @@
                 pesan.style.color = "green";
             });
 
+                const gambar = document.getElementById("LOGO");
+                    gambar.addEventListener("click", function () {
+                        if (!gambar.classList.contains("hilang")) {
+                            gambar.classList.add("hilang");
+                        } else {
+                            gambar.classList.remove("hilang");
+                        }
+                });
 
                 const box = document.getElementById("kirim");
                     box.addEventListener("mouseover", function () {
